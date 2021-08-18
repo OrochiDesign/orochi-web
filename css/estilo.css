@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Pacifico&display=swap');
+
+
+:root{
+    --color1: rgb(219,144,.5);
+    --color2: rgba(23,180,83,.0788);
+    --color3: rgba(11,194,211,0.623);
+    --fondo: crimson;
+    --titulos: 33px;
+    --margenes: 60px;
+    --espacios: 10px;
+    --espacios-contendido: 45px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--fondo);
+}
+img{
+    vertical-align: top;
+}
+
+
+/*  Preload  */
+.hidden{
+    overflow: hidden;
+}
+.centrado{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(8,0,130,0.9) 0%, rgba(79,0,131,0.9) 52%, rgba(0,0,0,0.9) 100%);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid lime;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+/* header */
+
+header{
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(to bottom, rgba(75, 0, 130, 0.8),rgba(0, 0, 255, .6), rgba(0,0,0,0.6)), url(../img/fondo1.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+nav{
+    width: 100%;
+    position: fixed;
+    box-shadow: 0 0 10px 0 rgba(0,0,150,0.5);
+}
+.nav1{
+    background: transparent;
+    height: 80px;
+    color: white;
+}
+.nav2{
+    background: rgba(220,20,60,0.3);
+    height: 100px;
+    color: black;
+}
+.contenedor-nav{
+    display: flex;
+    margin: auto;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    height: inherit;
+    overflow: hidden;
+}
+
+nav .enlaces a{
+    display: inline-block;
+    padding: 5px 0;
+    margin-right: 17px;
+    font-size: 17px;
+    font-weight: 300;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    color: black;
+    font-family: 'Pacifico', cursive;
+}
+nav .enlaces a:hover{
+    border-bottom: 3px solid navy;
+    transition: 0.6s;
+    color: lime;
+}
+.logo, .logo img{
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+}
+
+
+.icono{
+    display: none;
+    font-size: 24px;
+    padding: 23.5px 20px;
+    color: black;
+    cursor: pointer;
+}
+.icono:hover{
+    color: rgba(0,255,0,0.7);
+}
+.textos{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+}
+.textos h1{
+    font-family: 'Pacifico', cursive;
+    font-size: 80px;
+}
+.textos h1:hover{
+    color: lime;
+}
+.textos h2{
+    font-family: 'Caveat', cursive;
+    font-size: 60px;
+}
+.textos h2:hover{
+    color: limegreen;
+}
+
+/* main*/
+
+.contenedor{
+    margin: auto;
+    padding: var(--margenes) 0;
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
+    overflow: hidden;
+}
+.contenedor h3{
+    font-size: var(--titulos);
+    font-family: 'Pacifico', cursive;
+    margin-bottom: var(--espacios);
+}
+.contenedor h3:hover{
+    color: lime;
+}
+.contenedor p{
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Caveat', cursive;
+}
+.contenedor p:hover{
+    color: limegreen;
+}
+.after::after{
+    content: '';
+    display: block;
+    margin: auto;
+    margin-top: var(--espacios);
+    width: 100px;
+    height: 2px;
+    background: navy;
+    margin-bottom: var(--espacios-contendido);
+}
+.card{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.texto-team{
+    height: 20px;
+    width: 100%;
+    padding: var(--espacios) 0;
+}
+.texto-team h4{
+    font-family: 'Pacifico', cursive;
+}
+.texto-team h4:hover{
+    color: lime;
+}
+.content-card{
+    width: 31%;
+    box-shadow: 0 0 6px 0 rgba(75,0,130,0.5);
+    overflow: hidden;
+    height: 400px;
+}
+.people{
+    height: 80%;
+}
+.content-card img{
+    width: 100%;
+    height: 100%;
+    /*object-fit: cover;*/
+}
+.about{
+    background: url(../img/logo5.jpg);
+    height: auto;
+    background-position: center;
+}
+.about h3, p{
+    color: lime;
+}
+.about h3:hover{
+    color: springgreen;
+}
+
+.servicios{
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    margin: auto;
+    flex-wrap: wrap;
+}
+.servicios i{
+    /*height: 40px;
+    width: 40px;*/
+    font-size: 40px;
+    color: rgba(0,255,0,0.7);
+    
+}
+.caja-servicio>h4{
+    margin-bottom: var(--espacios);
+    margin-top: var(--espacios);
+    font-family: 'Pacifico', cursive;
+}
+.caja-servicio>h4:hover{
+    color: lime;
+}
+.caja-servicio>p{
+    color: white;
+}
+.botones-work{
+    overflow: hidden;
+}
+.botones-work li{
+    display: inline-block;
+    text-align: center;
+    margin-left: var(--espacios);
+    margin-bottom: var(--espacios-contendido);
+    padding: 6px 12px;
+    border: 1px solid navy;
+    background: rgba(0,255,0,0.6);
+    list-style: none;
+    cursor: pointer;
+    box-shadow: 0 0 5px 2px springgreen;
+    margin-top: 5px;
+}
+.botones-work li:hover{
+    background: rgba(0,0,0,1);
+    color: lime;
+}
+.botones-work .active{
+    background: rgba(255,100,0,1);
+    color: black;
+}
+.galeria-work{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.galeria-work .cont-work{
+    width: 31%;
+    box-shadow: 0 0 6px 0 rgba(0,0,255,0.5);
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: var(--espacios-contendido);
+}
+.img-work{
+    height: 90%;
+    width: 100%;
+}
+.img-work img{
+    height: 100%;
+    width: 100%;
+}
+.textos-work{
+    height: 10%;
+}
+.textos-work h4{
+    line-height: 30px;
+     font-family: 'Caveat', cursive;
+}
+/* footer */
+
+footer{
+    background: linear-gradient(0deg, rgba(0,0,0,1) 52%, rgba(79,0,131,1) 100%);
+    height: auto;
+}
+.marca-logo{
+    width: 20%;
+    margin: auto;
+    margin-bottom: var(--espacios);
+}
+.marca-logo img{
+    width: 100%;
+}
+.iconos{
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    width: 100%;
+}
+
+footer .fab{
+    font-size: 40px;
+    color: white;
+    margin-bottom: var(--espacios);
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    line-height: 46px;
+    border-radius: 50px;
+    
+}
+footer .fab:nth-child(1){
+    background: linear-gradient(41deg, rgba(255,248,0,1) 25%, rgba(255,0,78,1) 50%, rgba(154,0,255,1) 75%);
+    
+}
+footer .fab:nth-child(2){
+    background: #3b5998;
+}
+footer .fab:nth-child(3){
+    background: #00c600;
+}
+footer p{
+    color: indigo;
+    margin-top: 10px;
+}
+footer a{
+    color: indigo;
+    font-family: 'Pacifico', cursive;
+}
+footer a:hover{
+    color: lime;
+}
+
+/*  font-family: 'Pacifico', cursive;  */
+/*  font-family: 'Caveat', cursive;  */
+
+@media screen and (max-width:700px){
+    .icono{
+        display: block;
+    }
+    .enlaces{
+        position: fixed;
+        top: 80px;
+        background: linear-gradient(180deg, rgba(8,0,130,0.5) 0%, rgba(79,0,131,0.5) 52%, rgba(0,0,0,0.5) 100%);
+        left: 0;
+        height: auto;
+        transition: 1s;
+        width: 0;
+        overflow: hidden;
+    }
+    .enlaces a{
+        display: block;
+        width: 100%;
+        height: 50px;
+        padding: 20px;
+        text-align: center;
+    }
+    .textos>h1{
+        font-size: 70px;
+    }
+    .textos>h2{
+        font-size: 50px;
+    }
+    .content-card{
+        width: 48%;
+        margin-bottom: var(--margenes);
+    }
+    :root{
+        --margenes: 30px;
+    }
+}
+@media screen and (max-width: 500px){
+    .textos>h1{
+        font-size: 60px;
+    }
+    .textos>h2{
+        font-size: 40px;
+    }
+    .content-card{
+        width: 70%;
+    }
+    .galeria-work .cont-work{
+        height: 180px;
+        padding-bottom: 20px;
+    }
+    .marca-logo{
+        width: 30%;
+    }
+    footer .fab{
+        font-size: 40px;
+    }
+}
+
+
+
+
+
